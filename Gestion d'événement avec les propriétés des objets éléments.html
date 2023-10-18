@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!-- saved from url=(0060)https://www.gchagnon.fr/cours/dhtml/exercices/exo17vide.html -->
+<html lang="fr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Gestion d'événement avec les propriétés des objets éléments</title>
+
+<script>
+
+	function Init()
+		{
+			
+			let input = document.getElementById('champsaisie');		// récupère le champ de saisie
+			let submitButton = document.getElementById('soumet');	// récupère le boutton soumet
+			let resetButton = document.getElementById('raz');		// récupère le boutton reset
+			let span1 = document.getElementById('span1');			// récupère le span1
+
+			// affiche le message tapé
+			submitButton.addEventListener('click', () => {
+				alert(input.value);
+			});
+
+			// alert reset et remet le champ à son texte de base
+			resetButton.addEventListener('click', () => {
+				alert('Remise à zéro effectuée');
+				input.value = 'Mot quelconque';
+			});
+
+			// Affecter le gestionnaire d'événement au clic (remontée d'événement)
+			span1.addEventListener('click', function () {
+				// Changer la couleur de fond
+				this.style.backgroundColor = 'red';
+			});
+		}
+
+</script>
+
+</head>
+<body onload="Init()">
+
+<form action="https://www.gchagnon.fr/cours/dhtml/exercices/exo17vide.html" id="formulaire" data-np-autofill-form-type="other" data-np-checked="1" data-np-watching="1">
+	<input type="text" value="Mot quelconque" id="champsaisie">
+	<input type="button" id="soumet" value="Soumettre">
+	<input type="button" id="raz" value="Remise à zéro">
+</form>
+<span id="span1">Cliquez ici pour changer la couleur de fond</span>
+
+
+<div id="viewPortSize" style="display: none; background-color: rgb(0, 0, 0); color: rgb(255, 255, 255); font-size: 12px;" class="bottom_right"></div><script type="text/javascript" src="chrome-extension://fooolghllnmhmmndgjiamiiodkpenpbb/injectedPasswordless.js"></script></body></html>
